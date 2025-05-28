@@ -1561,7 +1561,7 @@ static void myspiWrite(SPILCD *pLCD, unsigned char *pBuf, int iLen, int iMode, i
             {
                 *d++ = *s++;
             }
-#if defined ARDUINO_ESP32S3_DEV
+#if defined CONFIG_IDF_TARGET_ESP32S3
             Cache_WriteBack_Addr((uint32_t)&pLCD->pBackBuffer[pLCD->iOffset], iStrip*2);
 #endif
             pLCD->iOffset += iStrip*2; iOff += iStrip*2;
