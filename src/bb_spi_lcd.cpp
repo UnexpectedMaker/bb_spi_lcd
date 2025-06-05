@@ -290,18 +290,20 @@ const BB_RGB rgbpanel_480x480 = {
     12000000 // speed
 };
 
+// 16-bit RGB panel 84800x480 for Unexpected Maker SQUiXL
 const BB_RGB rgbpanel_UM_480x480 = {
     -1 /* CS */, -1 /* SCK */, -1 /* SDA */,
     38 /* DE */, 47 /* VSYNC */, 48 /* HSYNC */, 39 /* PCLK */,
     8 /* R0 */, 7 /* R1 */, 6 /* R2 */, 5 /* R3 */, 4 /* R4 */,
     14 /* G0 */, 13 /* G1 */, 12 /* G2 */, 11 /* G3 */, 10 /* G4 */, 9 /* G5 */,
     21 /* B0 */, 18 /* B1 */, 17 /* B2 */, 16 /* B3 */, 15 /* B4 */,
-    10 /* hsync_back_porch */, 50 /* hsync_front_porch */, 8 /* hsync_pulse_width */,
-    8 /* vsync_back_porch */, 8 /* vsync_front_porch */, 3 /* vsync_pulse_width */,
+    2 /* hsync_back_porch */, 2 /* hsync_front_porch */, 1 /* hsync_pulse_width */,
+    8 /* vsync_back_porch */, 20 /* vsync_front_porch */, 2 /* vsync_pulse_width */,
     1 /* hsync_polarity */, 1 /* vsync_polarity */,
     480, 480,
     12000000 // speed
 };
+
 // 16-bit RGB panel 800x480 for JC8048W700 (7.0" 800x480)
 const BB_RGB rgbpanel_800x480_7 = {
     -1 /* CS */, -1 /* SCK */, -1 /* SDA */,
@@ -315,6 +317,7 @@ const BB_RGB rgbpanel_800x480_7 = {
     800, 480,
     16000000 // speed
 };
+
 // 16-bit RGB panel 800x480 for JC8048W543 and JC8048W550 (4.3"/5.5" 800x480)
 const BB_RGB rgbpanel_800x480 = {
     -1 /* CS */, -1 /* SCK */, -1 /* SDA */,
@@ -1892,7 +1895,7 @@ const unsigned char ucGC9D01InitList[] PROGMEM = {
     1, 0x29, // Display ON (29h) and delay(20)
     LCD_DELAY, 20,
     1, 0x2C, // Memory Write (2Ch) D=0
-    0}; // GC9D01 160x160 round
+    0};      // GC9D01 160x160 round
 
 const unsigned char ucGC9A01InitList[] PROGMEM = {
     1, 0xEF,
